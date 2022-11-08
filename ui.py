@@ -9,6 +9,8 @@ class Ui_MainWindow(QMainWindow):
         MainWindow.setFixedSize(320, 463)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setStyleSheet("background-color: #96aab7")
+
 
         self.all_time_music = QtWidgets.QLabel(self.centralwidget)
         self.all_time_music.setText("")
@@ -32,6 +34,8 @@ class Ui_MainWindow(QMainWindow):
         self.addMusic = QtWidgets.QPushButton(self.centralwidget)
         self.addMusic.setGeometry(QtCore.QRect(0, 220, 75, 23))
         self.addMusic.setObjectName("addMusic")
+        self.addMusic.setStyleSheet("border: none")
+
 
         self.repeat_btn = QtWidgets.QCheckBox(self.centralwidget)
         self.repeat_btn.setIcon(QIcon("src/repeat-1.svg"))
@@ -44,19 +48,24 @@ class Ui_MainWindow(QMainWindow):
         self.buttonPlay = QtWidgets.QPushButton(self.centralwidget)
         self.buttonPlay.setGeometry(QtCore.QRect(130, 60, 71, 71))
         self.buttonPlay.setObjectName("buttonPlay")
+        self.buttonPlay.setStyleSheet("border: none")
 
         self.nextTrack = QtWidgets.QPushButton(self.centralwidget)
         self.nextTrack.setGeometry(QtCore.QRect(240, 70, 51, 51))
         self.nextTrack.setObjectName("nextTrack")
+        self.nextTrack.setStyleSheet("border: none")
 
         self.previousTrack = QtWidgets.QPushButton(self.centralwidget)
         self.previousTrack.setGeometry(QtCore.QRect(40, 70, 51, 51))
         self.previousTrack.setObjectName("previousTrack")
+        self.previousTrack.setStyleSheet("border: none")
+
 
         self.timeMusic = QtWidgets.QSlider(self.centralwidget)
         self.timeMusic.setGeometry(QtCore.QRect(10, 170, 301, 22))
         self.timeMusic.setOrientation(QtCore.Qt.Horizontal)
         self.timeMusic.setObjectName("timeMusic")
+        self.timeMusic.setEnabled(False)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -68,7 +77,7 @@ class Ui_MainWindow(QMainWindow):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("Music Player", "Music Player"))
+        MainWindow.setWindowTitle(_translate("L Player", "L Player"))
         MainWindow.setWindowIcon(QIcon("src/music-note-beamed.svg"))
         self.addMusic.setText(_translate("MainWindow", "Add Music"))
 
@@ -93,9 +102,8 @@ class Ui_MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
-    app.setWindowIcon(QIcon("src/music-note-beamed.svg"))
+    app.setWindowIcon(QIcon("src/music-note-beamed.svg knmnmn"))
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
