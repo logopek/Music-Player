@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets, QtSvg
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QAbstractItemView, QMainWindow
+from PyQt5.QtWidgets import QAbstractItemView, QMainWindow, QAction
 
 
 class Ui_MainWindow(QMainWindow):
@@ -59,6 +59,12 @@ class Ui_MainWindow(QMainWindow):
         self.previousTrack.setGeometry(QtCore.QRect(40, 70, 51, 51))
         self.previousTrack.setObjectName("previousTrack")
         self.previousTrack.setStyleSheet("border: none")
+
+        self.downloadFromWeb = QtWidgets.QPushButton(self.centralwidget)
+        self.downloadFromWeb.setGeometry(QtCore.QRect(75, 220, 75, 23))
+        self.downloadFromWeb.setText("From web")
+        self.downloadFromWeb.setIcon(QIcon("src/cloud-arrow-down-fill.svg"))
+        self.downloadFromWeb.setStyleSheet("border: none")
 
 
         self.timeMusic = QtWidgets.QSlider(self.centralwidget)
